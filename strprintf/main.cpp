@@ -8,8 +8,8 @@ public:
 	strprintf(const char* format, ARGS... args)
 	{
 		int len = _scprintf(format, args...) + 1;
-		this->resize(len);
-		sprintf_s((char* const)this->c_str(), len, format, args...);
+		resize(len);
+		sprintf_s((char* const)c_str(), len, format, args...);
 	}
 
 	operator const char* ()
@@ -25,8 +25,8 @@ public:
 	wstrprintf(const wchar_t* format, ARGS... args)
 	{
 		int len = _scwprintf(format, args...) + 1;
-		this->resize(len);
-		swprintf_s((wchar_t* const)this->c_str(), len, format, args...);
+		resize(len);
+		swprintf_s((wchar_t* const)c_str(), len, format, args...);
 	}
 
 	operator const wchar_t* ()
